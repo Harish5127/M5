@@ -9,9 +9,18 @@ Write a C program to convert a 23.65 into 25 using pointer
 4.	Print the modified value.
 
 ## PROGRAM:
+      #include <stdio.h>
+      int main(){
+         double num=23.65;
+         double *ptr=&num;
+         *ptr=25.0;
+         printf("Modified value : %1.2f",num);
+    }
 
 ## OUTPUT:
  	
+![21](https://github.com/user-attachments/assets/b64d887f-cbeb-47d4-808a-794008067706)
+
 
 
 
@@ -45,8 +54,26 @@ Write a C program to calculate the Product of first 12 natural numbers using Rec
 6.	Print the result, indicating it is the product of the first 12 natural numbers.
 
 ## PROGRAM:
+     #include <stdio.h>
+     unsigned long long calculateproduct(int n) {
+         if(n==1) {
+         return 1;
+       }
+         else{
+         return n*calculateproduct(n-1);
+       }
+    }
+    int main() {
+       int n=12;
+       unsigned long long product;
+       product=calculateproduct(n);
+       printf("The product of first 12 naturl numbers = %d",product);
+       return 0;
+    }
 ## OUTPUT:
-         		
+![22](https://github.com/user-attachments/assets/0b0954cd-fba5-4740-aba5-88cd217d3450)
+
+        		
 ## RESULT:
 
 Thus the program has been executed successfully.
@@ -68,10 +95,31 @@ Write C Program to find Sum of each row of a Matrix
 4.	Print the sum for each row.
 
 ## PROGRAM:
-
+     #include <stdio.h>
+     int main() {
+     int row,col;
+     int i,j;
+     scanf("%d %d",&row,&col);
+     int a[row][col];
+     for(i=0;i<row;i++) {
+          for(j=0;j<col;j++) {
+              scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<row;i++) {
+          int sum=0;
+          for(j=0;j<col;j++) {
+              sum+=a[i][j];
+          }
+          printf("Sum of rows %d = %d\n",i+1,sum);
+     }
+      
+    }
 
 
 ## OUTPUT
+
+![23](https://github.com/user-attachments/assets/382dfc73-67d7-4449-bca1-ac108b4788e1)
 
 
  
@@ -79,7 +127,8 @@ Write C Program to find Sum of each row of a Matrix
 
  ## RESULT
  
-
+Thus the C program to String process executed successfully
+ 
 
 # EX-24-STRINGS
 
@@ -96,9 +145,31 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 5.	End the program.
 
 ## PROGRAM:
-
+     #include <stdio.h>
+     #include <string.h>
+     int main(){
+        char str[100];
+        int nums_row,i,j,k,index=0;
+        scanf("%s",str);
+        scanf("%d",&nums_row);
+        int len=strlen(str);
+        int midpoint=nums_row-1;
+        for(i=0;i<nums_row;i++) {
+             for(j=0;j<nums_row;j++) {
+                printf(" ");
+        }
+             for(k=0;k<=i;k++) {
+                printf("%c ",str[index % len]);
+                index++;
+        }
+         printf("\n");
+      }
+       return 0;
+    }
 
  ## OUTPUT
+
+![24](https://github.com/user-attachments/assets/ab4d1956-4399-4a12-9d9a-279688c4a996)
 
  
 
@@ -132,13 +203,33 @@ Step 5: Loop from i = 0 to i < n:
 Step 6: End the program.
 
 ## PROGRAM
-
+     #include <stdio.h>
+     int main() {
+       int i,n;
+       int arr[10];
+       int *ptr=arr;
+       scanf("%d",&n);
+       for(i=0;i<n;i++) {
+           scanf("%d",ptr+i);
+     }
+     printf("The elements are:\n");
+     for(i=0;i<n;i++){
+          printf("%d ",*(ptr+i));
+      }
+      printf("\n");
+      return 0;
+    }
+    
 ## OUTPUT
+
+![25](https://github.com/user-attachments/assets/f4d4f2ed-c8f0-48e2-94e7-1a27eb3cdbdd)
 
  
 
 ## RESULT
 
 Thus the C program to read and display an array of any 6 integer elements using pointer has been executed
+
+
 
 
